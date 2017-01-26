@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/aniketdatta47/number-to-roman-numeral/issues"
   },
-  "homepage": "https://github.com/aniketdatta47/number-to-roman-numeral#readme"
+  "homepage": "https://github.com/aniketdatta47/number-to-roman-numeral#readme",
+  "dependencies": {
+    "mocha": "^3.2.0"
+  }
 }
