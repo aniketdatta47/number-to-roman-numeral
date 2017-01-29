@@ -61,4 +61,4 @@ class RomanNumeralGenerator {
 
 }
 
-export RomanNumeralGenerator;
+module.exports = RomanNumeralGenerator;
