@@ -1,8 +1,7 @@
 class RomanNumeralGenerator {
-	constructor() {
-	}
+	constructor() {}
 
-  // repeats a roman numeral 'n' times
+	// repeats a roman numeral 'n' times
 	_repeat(numeral, n) {
 		let result = '';
 		for (let i = 0; i < n; i++) {
@@ -12,7 +11,7 @@ class RomanNumeralGenerator {
 		return result;
 	}
 
-  // returns a roman numeral for a digit
+	// returns a roman numeral for a digit
 	_genNumeralForDigit(number, onesSign, fivesSign, tensSign) {
 		switch (number) {
 		case 0:
@@ -31,30 +30,30 @@ class RomanNumeralGenerator {
 			return fivesSign + this._repeat(onesSign, number - 5); // e.g. VI - 6
 		case 9:
 			return onesSign + tensSign; // e.g. IX - 9
-    default:
-      throw new TypeError('Invalid digit during numeral generation for a digit');
+		default:
+			throw new TypeError('Invalid digit during numeral generation for a digit');
 		}
 	}
 
 	generate(number) {
-    if (isNaN(number)) {
-      throw new TypeError('Generator expects a number to passed.');
-    }
+		if (isNaN(number)) {
+			throw new TypeError('Generator expects a number to passed.');
+		}
 
-    if (number === 0) {
-      return 'nulla'; // ref - https://en.wikipedia.org/wiki/Roman_numerals#Zero
-    }
+		if (number === 0) {
+			return 'nulla'; // ref - https://en.wikipedia.org/wiki/Roman_numerals#Zero
+		}
 
-    // lets break down numeral generation based on magnitude
+		// lets break down numeral generation based on magnitude
 		var thousands = Math.floor(number / 1000) % 10;
-		var hundreds  = Math.floor(number / 100) % 10;
-		var tens      = Math.floor(number / 10) % 10;
-		var ones      = number % 10;
+		var hundreds = Math.floor(number / 100) % 10;
+		var tens = Math.floor(number / 10) % 10;
+		var ones = number % 10;
 
 		var romanThousands = this._repeat('M', thousands);
-		var romanHundreds  = this._genNumeralForDigit(hundreds, 'C', 'D', 'M');
-		var romanTens      = this._genNumeralForDigit(tens, 'X', 'L', 'C');
-		var romanOnes      = this._genNumeralForDigit(ones, 'I', 'V', 'X');
+		var romanHundreds = this._genNumeralForDigit(hundreds, 'C', 'D', 'M');
+		var romanTens = this._genNumeralForDigit(tens, 'X', 'L', 'C');
+		var romanOnes = this._genNumeralForDigit(ones, 'I', 'V', 'X');
 
 		return '' + romanThousands + romanHundreds + romanTens + romanOnes;
 	}
