@@ -1,17 +1,17 @@
 var expect = require('expect.js');
-var RomanNumeralGenerator = require('../RomanNumeralGenerator');
+var RomanNumeralGenerator = require('../RomanNumeralGeneratorES5');
 
-describe('Testing Roman Numeral Generator: ', function() {
+describe('Testing Roman Numeral Generator ES5: ', function() {
 	it('generate should be a function', function() {
 		expect(RomanNumeralGenerator.generate).to.be.a('function');
 	});
 
-	it('_repeat should be private function', function() {
-		expect(RomanNumeralGenerator._repeat).to.be.a('function');
+	it('_repeat should not be exposed: ', function() {
+		expect(RomanNumeralGenerator._repeat).to.be.a('undefined');
 	});
 
-	it('_genNumeralForDigit should be private function', function() {
-		expect(RomanNumeralGenerator._genNumeralForDigit).to.be.a('function');
+	it('_genNumeralForDigit should not be exposed', function() {
+		expect(RomanNumeralGenerator._genNumeralForDigit).to.be.a('undefined');
 	});
 
 	it('converting 0 to return nulla', function() {
@@ -39,8 +39,10 @@ describe('Testing Roman Numeral Generator: ', function() {
 	});
 
 	it('Passing invalid entries such as {}, undefined to throw a TypeError ', function() {
-		expect(RomanNumeralGenerator.generate).withArgs([{}, undefined]).to.throwException(function(e) {
-			expect(e).to.be.a(TypeError);
-		});
+		expect(RomanNumeralGenerator.generate)
+			.withArgs([{}, undefined])
+			.to.throwException(function(e) {
+				expect(e).to.be.a(TypeError);
+			});
 	});
 });
