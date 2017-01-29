@@ -1,6 +1,11 @@
 var RomanNumeralGenerator = require ('../RomanNumeralGenerator');
 
-// RomanNumeralGenerator.generate(n) where n is number to convert
+// to test ES5 version
+// var RomanNumeralGenerator = require ('../RomanNumeralGeneratorES5');
+
+// USAGE:
+//  -> RomanNumeralGenerator.generate(n);
+// where n is number to convert
 // returns roman numeral of 'n'
 
 function printRomanLiteral(num) {
