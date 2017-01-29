@@ -4,7 +4,7 @@
   "description": "Provides you the roman numeral equivalent to a Hindu / Arabic number (the current number system).",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests/"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/aniketdatta47/number-to-roman-numeral#readme",
   "dependencies": {
+    "expect.js": "^0.3.1",
     "mocha": "^3.2.0"
   }
 }
