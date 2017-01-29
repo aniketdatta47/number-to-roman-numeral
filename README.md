@@ -10,3 +10,9 @@ RomanNumeralGenerator.generate(n); // where n is the number to convert
 
 example:
 ⋅⋅*  RomanNumeralGenerator.generate(5); // returns 'V'
+
+# Tests
+
+[Mocha] (https://mochajs.org) for testing.
+
+logToConsole.js is a quick way to test module import for nodejs and provides a basic usage example.

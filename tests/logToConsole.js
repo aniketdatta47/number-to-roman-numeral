@@ -1,10 +1,11 @@
 var RomanNumeralGenerator = require ('../RomanNumeralGenerator');
 
-function printRomanLiteral(num) {
-  console.log("generated: " + objGen.generate(num) + " for " + num + "\n");
-}
+// RomanNumeralGenerator.generate(n) where n is number to convert
+// returns roman numeral of 'n'
 
-var objGen = new RomanNumeralGenerator();
+function printRomanLiteral(num) {
+  console.log("generated: " + RomanNumeralGenerator.generate(num) + " for " + num + "\n");
+}
 
 printRomanLiteral(1);
 printRomanLiteral(5);
